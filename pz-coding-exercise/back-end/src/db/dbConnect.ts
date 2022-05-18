@@ -25,18 +25,19 @@
 
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
-import Cheese from "./models/Cheese";
 
-export const collections: { games?: mongoDB.Collection } = {}
+export const collections: { games?: mongoDB.Collection } = {};
 
-export async function connectToDatabase () {
+export async function connectToDatabase() {
   dotenv.config();
 
-  const client: mongoDB.MongoClient = new mongoDB.MongoClient(`${process.env.DB_CONNECTION_STRING}${process.env.DB_NAME}` || "");
-          
+  const client: mongoDB.MongoClient = new mongoDB.MongoClient(
+    `${process.env.DB_CONNECTION_STRING}${process.env.DB_NAME}` || ""
+  );
+
   await client.connect();
-      
+
   const db: mongoDB.Db = client.db(process.env.DB_NAME);
 
-       console.log(`Successfully connected to database: ${db.databaseName}`);
+  console.log(`Successfully connected to database: ${db.databaseName}`);
 }
