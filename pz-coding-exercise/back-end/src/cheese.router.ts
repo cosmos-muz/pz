@@ -28,7 +28,8 @@ const deleteCheese = async (req: Request, res: Response) => {
 
 const getObject = (req: Request) => {
   const cheese = new Cheese();
-  const { body } = req;
+  const { body = {} } = req;
+
   cheese.colour = body.color || "";
   cheese.imageUrl = body.imageUrl || "";
   return cheese;
@@ -39,18 +40,18 @@ cheeseRouter.get("/", getCheese);
 cheeseRouter.post("/", async (req: Request, res: Response) => {
   try {
     const { body } = req;
+    console.log("Umar");
     const cheese = getObject(req);
     const cheeseService = new CheeseService();
     const errors = cheeseService.validateForSave(cheese);
     if (errors && errors.length > 0) {
-      res.status(400).send("Input request is invalid");
+      res.status(400).send({errors});
     } else {
       const data = await cheeseService.saveCheese(cheese);
       res.status(200).send({ data });
     }
-   
   } catch (error) {
-    res.status(500).send({error});
+    res.status(500).send({ message: error });
   }
 });
 cheeseRouter.patch("/", updateCheese);

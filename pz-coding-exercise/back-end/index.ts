@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cheeseRouter from "./src/cheese.router";
+const morgan = require('morgan');
 
 dotenv.config();
 
@@ -11,8 +12,10 @@ import { connectToDatabase } from "./src/db/dbConnect";
 
 connectToDatabase()
   .then(() => {
+    app.use(morgan('tiny'));
     app.use("/cheese", cheeseRouter);
     app.get("/health", (req: Request, res: Response) => {
+      console.log("health")
       res.status(200).send("Healthy");
     });
 
