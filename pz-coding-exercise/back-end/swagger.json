@@ -1,0 +1,193 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "3.0.0",
+      "title": "My Cheeseria project CRUD",
+      "description": "My User Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:4000/cheeses",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Cheeses",
+        "description": "API for cheeses in the system"
+      }
+    ],
+    "schemes": ["http", "https"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/": {
+          "get": {
+            "tags": ["Cheeses"],
+            "summary": "Get all cheeses in system",
+            "responses": {
+              "200": {
+                "description": "OK"
+              }
+            }
+          }
+        },
+        "/colour/{colour}":{
+          "get": {
+            "tags": [
+              "Cheeses"
+            ],
+            "description": "Find cheeses by colour",
+            "parameters": [
+              {
+                "name": "colour",
+                "in": "path",
+                "required": true,
+                "description": "colour of cheese that we want to find",
+                "type": "string"
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "",
+                "schema": {
+                  "$ref": "#/definitions/cheeseModel"
+                }
+              }
+            }
+          } },
+        "/addCheese":{
+        "post": {
+          "tags": [
+            "Cheese"
+          ],
+          "description": "Create new cheese in system",
+          "parameters": [
+            {
+              "name": "cheese",
+              "in": "body",
+              "description": "Cheese that we want to create",
+              "schema": {
+                "$ref": "#/definitions/addOrUpdateCheeseModel"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New cheeese is created",
+              "schema": {
+                "$ref": "#/definitions/addOrUpdateCheeseModel"
+              }
+            }
+          }
+        } },
+        "/{id}": {
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "description": "ID of cheese that we want to find",
+                "type": "string"
+              }
+            ],
+            "delete": {
+              "summary": "Delete cheese with given ID",
+              "tags": [
+                "Cheese"
+              ],
+              "responses": {
+                "200": {
+                  "description": "Cheese is deleted",
+                  "schema": {
+                    "$ref": "#/definitions/cheeseModel"
+                  }
+                }
+              }
+            },
+            "patch": {
+              "summary": "Update cheese with given ID",
+              "tags": [
+                "Cheese"
+              ],
+              "parameters": [
+                {
+                  "name": "cheese",
+                  "in": "body",
+                  "description": "Cheese with new values of properties",
+                  "schema": {
+                    "$ref": "#/definitions/addOrUpdateCheeseModel"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Cheese is updated",
+                  "schema": {
+                    "$ref": "#/definitions/cheeseModel"
+                  }
+                }
+              }
+            },
+            "get": {
+              "summary": "Find cheese with given ID",
+              "tags": [
+                "Cheese"
+              ],
+              "responses": {
+                "200": {
+                  "description": "Cheese is found",
+                  "schema": {
+                    "$ref": "#/definitions/cheeseModel"
+                  }
+                }
+              }
+            }
+          }
+      },
+      "definitions": {
+        "cheeseModel": {
+          "required": [
+            "colour",
+            "price",
+            "imageUrl"
+          ],
+          "properties": {
+            "id": {"type": "string"},
+            "colour": {
+              "type": "string"
+            },
+            "imageUrl": {
+              "type": "string"
+            },
+            "price": {
+              "type": "integer"
+            }
+          }
+        },
+        "addOrUpdateCheeseModel": {
+          "required": [
+            "colour",
+            "price",
+            "imageUrl"
+          ],
+          "properties": {
+            "colour": {
+              "type": "string"
+            },
+            "imageUrl": {
+              "type": "string"
+            },
+            "price": {
+              "type": "integer"
+            }
+          }
+        }
+    }
+  }
