@@ -24,7 +24,6 @@ connectDb()
     app.use(bodyParser.json())
     app.use("/cheeses", cheeseRouter);
     app.get("/health", (req: Request, res: Response) => {
-      console.log("health")
       res.status(200).send("Healthy");
     });
     app.use((err: Error, req, res, next) => {

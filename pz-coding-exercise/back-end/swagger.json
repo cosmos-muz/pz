@@ -3,7 +3,7 @@
     "info": {
       "version": "3.0.0",
       "title": "My Cheeseria project CRUD",
-      "description": "My User Project Application API",
+      "description": "My Cheese Project Application API",
       "license": {
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT"

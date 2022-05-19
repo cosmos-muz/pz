@@ -1,7 +1,6 @@
 import { ICheese } from "../db/models/Cheese";
 import { Cheese } from "../domain/Cheese";
 import CheeseRepository from "../repositories/CheeseRepository";
-import { Document } from "mongoose";
 
 export default class {
   async saveCheese(cheeseInput: Cheese) {

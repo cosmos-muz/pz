@@ -50,7 +50,7 @@ export default class {
       throw error;
     }
   }
-  // TODO: Do pagination
+  // TODO: Do pagination; take page size and page from api end points
   async findAll() {
     try {
       return await CheeseModel.find({}).limit(5).lean();
