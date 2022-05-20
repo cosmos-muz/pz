@@ -1,0 +1,41 @@
+@import '../../common/variable.scss';
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.cheeseNameDropdown {
+    width: 200px;
+  
+}
+
+.cheeseNameDropdown > div{
+    margin-right: 10px;
+}
+.qty {
+    width: 200px;
+}
+
+.qty > div{
+    margin-right: 10px;
+}
+
+.unitDropdown > div{
+    margin-right: 10px;
+}
+
+.unitDropdown {
+    width: 100px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}

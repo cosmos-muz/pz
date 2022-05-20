@@ -1,0 +1,40 @@
+.summaryImage{
+    width: 100%;
+    border: 5px solid #e5e5e5;
+    padding: 10px;
+}
+
+.summaryContainer{
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.summaryText{
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.horizontalLine{
+    border-bottom: 2px solid;
+    width: 100%;
+    margin: 10px;
+}
+
+.summaryExtra{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    margin: 5px 0px;
+}

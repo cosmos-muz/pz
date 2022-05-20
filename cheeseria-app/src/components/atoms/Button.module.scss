@@ -1,0 +1,17 @@
+@import '../../common/variable.scss';
+
+.button {
+    background-color: $button-background-color;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    margin: 2px 2px;
+}
+
+.highlight {
+    background-color: $button-selection-color;
+}
+
+.button:hover {
+    background-color: $button-hover-color;
+}

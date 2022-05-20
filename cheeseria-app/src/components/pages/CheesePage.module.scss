@@ -1,0 +1,21 @@
+.summaryContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-end;
+}
+
+.mainContainer {
+    padding: 24px;
+}
+
+.heading {
+    text-align: center;
+    margin: 20px 0 40px 0;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.calculator {}
