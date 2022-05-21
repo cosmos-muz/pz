@@ -27,7 +27,10 @@ npm install
 npm run dev
 ```
 
-Please make sure the docker is running as per instructions as it starts mongodb database.
+Please make sure the mongo db is running in docker or you have a local mongod instance.
+
+**If you are not running the app in docker, please use this for DB_CONNECTION_STRING
+DB_CONNECTION_STRING="mongodb://localhost:27017/"**
 
 Api would be listening on [http://localhost:4000](http://localhost:4000).
 
