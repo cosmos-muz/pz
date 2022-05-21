@@ -24,8 +24,7 @@ From terminal run:
 ### front-end
 Above commands start the front-end on: http://localhost:3000
   - React
-  - Typescript
-
+  
 ### - back-end
 Above commands start the back-end on: http://localhost:4000
   - Node

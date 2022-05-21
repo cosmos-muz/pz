@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /cheeseria-app
+WORKDIR /cheeseria-ui
 COPY package.json ./
 COPY ./ ./
 RUN npm install

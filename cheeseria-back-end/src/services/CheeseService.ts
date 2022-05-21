@@ -15,7 +15,7 @@ export default class {
 
   async updateCheese(cheeseInput: Cheese) {
     try {
-     const cheeseDoc = await this.cheeseRepo.updateCheese(cheeseInput);
+      const cheeseDoc = await this.cheeseRepo.updateCheese(cheeseInput);
       if (cheeseDoc) {
         return this.toCheeseTO(cheeseDoc);
       }
@@ -86,6 +86,9 @@ export default class {
     if (cheese.price && isNaN(cheese.price)) {
       errors.push("price is required");
     }
+    if(cheese.price && cheese.price <= 0){
+      errors.push("price must be a non-negative number");
+    }
     return errors;
   }
 
@@ -99,6 +102,9 @@ export default class {
     }
     if (cheese.price && isNaN(cheese.price)) {
       errors.push("price must be a number");
+    }
+    if(cheese.price && cheese.price <= 0){
+      errors.push("price must be a non-negative number");
     }
     return errors;
   }

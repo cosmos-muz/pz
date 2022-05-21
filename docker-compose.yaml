@@ -1,8 +1,8 @@
 version: "3"
 services:
 
-  front-end:
-    container_name: front-end
+  cheeseria-ui:
+    container_name: cheeseria-app
     restart: always
     build: ./cheeseria-app
     stdin_open: true
@@ -10,8 +10,8 @@ services:
       - "3000:3000"
     networks:
       - cheeseria-app
-  back-end:
-    container_name: back-end
+  cheeseria-api:
+    container_name: cheeseria-back-end
     restart: always
     build: ./cheeseria-back-end
     ports:
