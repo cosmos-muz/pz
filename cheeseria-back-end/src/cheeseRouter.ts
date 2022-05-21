@@ -46,7 +46,6 @@ cheeseRouter.post(
   "/addCheese",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { body } = req;
       const cheese = getPostObject(req);
       const errors = cheeseService.validateForSave(cheese);
       if (errors && errors.length > 0) {
@@ -147,4 +146,4 @@ cheeseRouter.get(
   }
 );
 
-export default cheeseRouter;
+export {cheeseRouter};

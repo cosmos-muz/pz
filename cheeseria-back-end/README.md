@@ -35,15 +35,19 @@ Api would be listening on [http://localhost:4000](http://localhost:4000).
 
 The app has been organised in the following folder structure
 
-- `db` holds all the database related files. It homes the connection to db, any migration scrips to run and model for the database etc,
+- `config` holds all the configuration related files. It homes the connection to db, any migration scrips to run and swagger doc etc,
 
-- `domain` is where we may define our object structure. In our case, it is just Cheese so we have the `Cheese` class that tells us what properties it needs in the form of data.
+- `domains` is where we may define our object structure. In our case, it is just Cheese so we have the `Cheese` class that tells us what properties it needs in the form of data.
+
+- `models` hold db models. We are using `mongodb` so db schemas would go in there.
+
+- `middleWares` hold middlewares like error handling, rootMiddleware. These are the non api based middlewares. 
 
 - `repositories` just hold files that interact with the database. 
 
 - `services` is the middle layer for logic. It sits in the middle between controllers and repositories.
 
-- `controller` even though there is no distinction for that in the project, `cheese.router.ts` holds api endpoints for the cheese CRUD functions.
+- `cheeseRouter` it holds api endpoints for the cheese CRUD functions.
 
 - `.env` holds enviroenment variables to facilitate development & production environment. For thsi project, I just focused it for development but possibly a second environment file for production would be needed.
 

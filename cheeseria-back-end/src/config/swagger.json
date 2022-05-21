@@ -9,8 +9,8 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "localhost:4000/cheeses",
-    "basePath": "/",
+    "host": "localhost:4000",
+    "basePath": "/cheeseria/api/v1/cheeses/",
     "tags": [
       {
         "name": "Cheeses",
@@ -154,12 +154,16 @@
       "definitions": {
         "cheeseModel": {
           "required": [
+            "name",
             "colour",
             "price",
             "imageUrl"
           ],
           "properties": {
             "id": {"type": "string"},
+            "name": {
+              "type": "string"
+            },
             "colour": {
               "type": "string"
             },
@@ -173,11 +177,15 @@
         },
         "addOrUpdateCheeseModel": {
           "required": [
+            "name",
             "colour",
             "price",
             "imageUrl"
           ],
           "properties": {
+            "name": {
+              "type": "string"
+            },
             "colour": {
               "type": "string"
             },

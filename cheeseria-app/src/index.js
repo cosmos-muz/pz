@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CheesePage from './components/pages/CheesePage';
+import MainPage from './pages/MainPage';
+import { ErrorBoundary } from './pages/ErrorBoundry';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CheesePage />
+    <ErrorBoundary>
+      <MainPage />
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

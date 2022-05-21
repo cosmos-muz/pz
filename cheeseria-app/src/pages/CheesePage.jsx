@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 import styles from './CheesePage.module.scss';
-import CheeseSummary from '../molecules/CheeseSummary';
-import CheeseApi from '../../api/CheeseApi';
-import Button from '../atoms/Button';
-import Calculator from '../molecules/Calculator';
+import CheeseSummary from '../components/molecules/CheeseSummary';
+import CheeseApi from '../api/CheeseApi';
+import Calculator from '../components/molecules/Calculator';
 
 class CheesePage extends Component {
   constructor(props) {
@@ -33,7 +31,7 @@ class CheesePage extends Component {
         imageUrl={imageUrl} 
         onClickFunc={() => {}} 
         colour={colour}
-        price={price}
+        price={Number(price)}
         />
       );
     });
@@ -43,7 +41,7 @@ class CheesePage extends Component {
     return (
       <div className={styles.mainContainer} key="cheese-page">
         <div className={styles.heading}>Cheeseria</div>
-        <div className={styles.calculator}><Calculator /></div>
+        <div className={styles.calculator}><Calculator cheeses={this.state.cheeses} /></div>
         <div className={styles.summaryContainer}>{this.renderCheeseList()}</div>
       </div>
     );

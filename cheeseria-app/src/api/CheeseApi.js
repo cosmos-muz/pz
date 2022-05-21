@@ -1,16 +1,11 @@
 import axios from 'axios';
 
 export default class CheeseApi {
+   baseUrl = `${process.env.REACT_APP_SERVER_URL}/v1/cheeses`;
   async getCheeses() {
-    const baseUrl = process.env.REACT_APP_SERVER_URL;
+    
     const response = await axios
-      .get(`${baseUrl}cheeses`);
-      // .then((res) => {
-      //   return res.data;
-      // })
-      // .catch((err) => {
-      //   throw err;
-      // });
+      .get(`${this.baseUrl}/`);
       return response.data;
   }
 }
