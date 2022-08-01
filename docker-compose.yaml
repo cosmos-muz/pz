@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   cheeseria-ui:
     container_name: cheeseria-app
     restart: always
