@@ -24,6 +24,9 @@ export class App {
     this.app.listen(this.port, () => {
       console.log(`Server started at http://localhost:${this.port}`);
     });
+    this.app.use("/", (req, res, next) => {
+      res.send("");
+    });
     errorMiddleware(this.app);
   }
 }
